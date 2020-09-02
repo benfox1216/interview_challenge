@@ -8,6 +8,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+JobApplication.destroy_all
+JobPosting.destroy_all
+Candidate.destroy_all
+
 candidate1 = Candidate.create(first_name: 'Mary', last_name: 'Jane', email: 'mary.jane@vangst.com')
 candidate2 = Candidate.create(first_name: 'Bob', last_name: 'Marley', email: 'b.mar@vangst.com')
 candidate3 = Candidate.create(first_name: 'Smokey', last_name: 'TheBear', email: 'smokey@vangst.com')

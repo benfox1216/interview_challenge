@@ -13,5 +13,25 @@ module Types
     def hello_world
       'Hello World - This is your Interview Challenge!\nGood luck.'
     end
+    
+    field :all_candidates, [Types::CandidateType], null: false
+    
+    def all_candidates
+      Candidate.all
+    end
+    
+    field :candidate, Types::CandidateType, null: false do
+      argument :id, ID, required: true
+    end
+    
+    def candidate(id:)
+      Candidate.find(id)
+    end
+    
+    field :job_applications , [Types::JobApplicationType], null: false
+    
+    def job_applications
+      JobApplication.all
+    end
   end
 end
