@@ -27,5 +27,11 @@ module Types
     def candidate(id:)
       Candidate.find(id)
     end
+    
+    field :job_applications , [Types::JobApplicationType], null: false
+    
+    def job_applications
+      JobApplication.all
+    end
   end
 end
